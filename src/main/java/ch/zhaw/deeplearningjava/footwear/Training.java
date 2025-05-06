@@ -8,7 +8,7 @@
  *
  * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
  * OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
- * and limitations under the License.
+ * and limitations under the Licens.
  */
 package ch.zhaw.deeplearningjava.footwear;
 
@@ -55,8 +55,8 @@ public final class Training {
         Path modelDir = Paths.get("models");
 
         // create ImageFolder dataset from directory
-        // ImageFolder dataset = initDataset("ut-zap50k-images-square");
-        ImageFolder dataset = initDataset("ut-zap50k-images-square-small");
+        // ImageFolder dataset = initDataset("recycling-dataset");
+        ImageFolder dataset = initDataset("recycling-dataset");
         // Split the dataset set into training dataset and validate dataset
         RandomAccessDataset[] datasets = dataset.randomSplit(8, 2);
 
@@ -92,7 +92,7 @@ public final class Training {
         model.setProperty("Loss", String.format("%.5f", result.getValidateLoss()));
 
         // save the model after done training for inference later
-        // model saved as shoeclassifier-0000.params
+        // model saved as wasteclassifier-0000.params
         model.save(modelDir, Models.MODEL_NAME);
 
         // save labels into model directory
